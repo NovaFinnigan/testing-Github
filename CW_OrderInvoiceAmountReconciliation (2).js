@@ -86,7 +86,12 @@ function main(request,response){
             } else {
                 //console.log(intId + ' ' + pro + ':' + invAmt + 'same as' + orderAmt); // Matched
             }
-        }
+        }if (invAmt != orderAmt){
+            arr.push(intId + SEPARATOR + pro + SEPARATOR + invAmt + SEPARATOR + 'not same as' + SEPARATOR + orderAmt);
+            //console.log(intId + ' ' + pro + ':' + invAmt + 'not same as' + orderAmt);//Error
+        } else {
+            //console.log(intId + ' ' + pro + ':' + invAmt + 'same as' + orderAmt); // Matched
+        }//hello world//
         //hello world//
         body = arr.join('\n');
         var userEmail = nlapiGetContext().getEmail();
