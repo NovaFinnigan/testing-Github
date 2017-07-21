@@ -74,6 +74,7 @@ function main(request,response){
             intId = orders[i].getValue('internalid');
             pro = orders[i].getValue('custbody_cw_disppronos');
             var idx = invOrderIds.indexOf(intId);
+
             if (idx != -1){
                 invAmt = parseFloat(invoices[idx].getValue('amount',null,'sum'));
             } else {
@@ -86,6 +87,7 @@ function main(request,response){
                 //console.log(intId + ' ' + pro + ':' + invAmt + 'same as' + orderAmt); // Matched
             }
         }
+        //hello world//
         body = arr.join('\n');
         var userEmail = nlapiGetContext().getEmail();
         SEND_DL = userEmail ? userEmail : SEND_DL;
